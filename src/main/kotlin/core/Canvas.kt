@@ -2,10 +2,10 @@ package core
 
 object Canvas {
 
-    const val minWidth = 4;
-    const val maxWidth = 40;
-    const val minHeight = 4;
-    const val maxHeight = 40;
+    const val minWidth = 4
+    const val maxWidth = 40
+    const val minHeight = 4
+    const val maxHeight = 40
 
     private var width: Int = 0
     private var height: Int = 0
@@ -25,11 +25,6 @@ object Canvas {
     }
 
     fun isEmpty() = data.isEmpty()
-
-    fun isTop(y: Int) = y == 1
-    fun isBottom(y: Int) = y == height
-    fun isLeft(x: Int) = x == 1
-    fun isRight(x: Int) = x == width
 
     fun getWidth() = width
     fun getHeight() = height

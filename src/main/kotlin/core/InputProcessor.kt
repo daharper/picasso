@@ -16,6 +16,6 @@ object InputProcessor {
         return if (tokens.size == 1)
                     Input(command)
                else
-                    Input(command, tokens.slice(1 until tokens.size));
+                    Input(command, tokens.slice(1 until tokens.size))
     }
 }

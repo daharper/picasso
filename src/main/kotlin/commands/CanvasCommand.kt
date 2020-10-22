@@ -5,8 +5,8 @@ import core.Input
 
 class CanvasCommand(input: Input) : Command(input) {
 
-    private var height = 0;
-    private var width = 0;
+    private var height = 0
+    private var width = 0
 
     init {
         require(2, "invalid command, try: C 20 4")

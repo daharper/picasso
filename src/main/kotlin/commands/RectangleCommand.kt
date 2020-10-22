@@ -7,10 +7,10 @@ class RectangleCommand(input: Input) : Command(input) {
 
     private val pen = 'x'
 
-    private var x1 = 0;
-    private var x2 = 0;
-    private var y1 = 0;
-    private var y2 = 0;
+    private var x1 = 0
+    private var x2 = 0
+    private var y1 = 0
+    private var y2 = 0
 
     init {
         require(4, "Invalid command, try: R 1 1 10 10")

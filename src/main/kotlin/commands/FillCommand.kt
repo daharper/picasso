@@ -6,8 +6,8 @@ import core.Pixel
 
 class FillCommand(input: Input) : Command(input) {
 
-    private var x = 0;
-    private var y = 0;
+    private var x = 0
+    private var y = 0
     private var pen = 'c'
 
     init {

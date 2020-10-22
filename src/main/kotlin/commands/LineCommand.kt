@@ -8,10 +8,10 @@ class LineCommand(input: Input) : Command(input) {
 
     private val pen = 'x'
 
-    private var x1 = 0;
-    private var x2 = 0;
-    private var y1 = 0;
-    private var y2 = 0;
+    private var x1 = 0
+    private var x2 = 0
+    private var y1 = 0
+    private var y2 = 0
 
     init {
         input.require(4, "Invalid command, try: L 1 2 6 2")
@@ -23,12 +23,10 @@ class LineCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        if (x1 == x2) {
-            drawVerticalLine()
-        } else if (y1 == y2) {
-            drawHorizontalLine()
-        } else {
-            drawDiagonalLine()
+        when {
+            x1 == x2 -> drawVerticalLine()
+            y1 == y2 -> drawHorizontalLine()
+            else -> drawDiagonalLine()
         }
     }
 
@@ -57,8 +55,8 @@ class LineCommand(input: Input) : Command(input) {
 
         val xOffset = if (x2 > x1) 1 else -1
 
-        var x = x1;
-        var y = y1;
+        var x = x1
+        var y = y1
 
         // if the line is more vertical, we'll draw by enumerating all the Y points
         if (yPixelCount >= xPixelCount) {
@@ -81,15 +79,15 @@ class LineCommand(input: Input) : Command(input) {
         }
 
         // line is more horizontal, we'll draw by enumerating all the X points
-        val step = xPixelCount / yPixelCount;
+        val step = xPixelCount / yPixelCount
 
         for (i in 1..xPixelCount) {
             Canvas.setPen(x, y, pen)
 
-            x += xOffset;
+            x += xOffset
 
             if (i % step == 0 && y < y2) {
-                ++y;
+                ++y
             }
         }
     }
