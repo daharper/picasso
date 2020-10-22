@@ -27,6 +27,7 @@ object Canvas {
     fun isEmpty() = data.isEmpty()
 
     fun getWidth() = width
+
     fun getHeight() = height
 
     fun getPixel(x: Int, y: Int) = Pixel(x, y)
