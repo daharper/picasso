@@ -2,7 +2,8 @@ import commands.*
 import core.*
 
 fun main() {
-    var cmd: Command = InvalidCommand(Input())
+    var cmd: Command = HelpCommand()
+    cmd.execute()
 
     while (cmd !is QuitCommand) {
         Renderer.execute()
@@ -14,6 +15,7 @@ fun main() {
                 "B" -> FillCommand(input)
                 "C" -> CanvasCommand(input)
                 "D" -> DemoCommand(input)
+                "H" -> HelpCommand(input)
                 "L" -> LineCommand(input)
                 "Q" -> QuitCommand(input)
                 "R" -> RectangleCommand(input)

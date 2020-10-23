@@ -15,7 +15,7 @@ class TriangleCommand(input: Input) : Command(input) {
     private var y3 = 0
 
     init {
-        require(6, "Invalid command, try: T 10 1 1 4 20 4")
+        require(6, "Invalid command, try: T 1 1 1 10 5 5")
 
         x1 = getX(0)
         y1 = getY(1)
