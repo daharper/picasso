@@ -8,7 +8,7 @@ data class Input(val command: String = "", val args: List<String> = listOf()) {
         }
     }
 
-    fun getInt(index: Int)= args[index].toIntOrNull() ?: 0
+    fun getInt(index: Int) = args[index].toIntOrNull() ?: 0
 
     fun getChar(index: Int) = args[index][0]
 

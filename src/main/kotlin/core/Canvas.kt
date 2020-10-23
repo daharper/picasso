@@ -12,17 +12,14 @@ object Canvas {
     private var data: CharArray = CharArray(0)
 
     init {
-        initialize(10, 10)
+        initialize(20, 4)
     }
 
     fun initialize(width: Int, height: Int) {
         this.height = height
         this.width = width
-
-        data = "".padEnd(height * width).toCharArray()
+        this.data = "".padEnd(height * width).toCharArray()
     }
-
-    fun isEmpty() = data.isEmpty()
 
     fun getWidth() = width
 
