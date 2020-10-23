@@ -7,6 +7,8 @@ abstract class Command(val input: Input) {
 
     fun require(count: Int, error: String) = input.require(count, error)
 
+    fun requireMin(count: Int, error: String) = input.requireMin(count, error)
+
     fun asInt(index: Int) = input.getInt(index)
 
     fun getX(index: Int): Int {
@@ -29,9 +31,11 @@ abstract class Command(val input: Input) {
         return y
     }
 
-    fun getPen(index: Int) : Char {
+    fun getPen(index: Int): Char {
         return input.getChar(index)
     }
+
+    fun getText(index: Int) = input.getText(index)
 
     abstract fun execute()
 }

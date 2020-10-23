@@ -33,6 +33,15 @@ object Canvas {
         data[getIndex(x, y)] = pen
     }
 
+    fun drawText(x: Int, y: Int, text: String) {
+        var i = x
+
+        for (c in text) {
+            if (i > width) break
+            drawPixel(i++, y, c)
+        }
+    }
+
     fun drawHorizontalLine(start: Pixel, end: Pixel, pen: Char) {
         var x1 = start.x
         var x2 = end.x

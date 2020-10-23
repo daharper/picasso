@@ -20,6 +20,7 @@ fun main() {
                 "Q" -> QuitCommand(input)
                 "R" -> RectangleCommand(input)
                 "T" -> TriangleCommand(input)
+                "W" -> WriteCommand(input)
                 else -> InvalidCommand(input)
             }
 
