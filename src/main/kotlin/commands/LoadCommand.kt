@@ -6,7 +6,7 @@ import java.io.File
 
 class LoadCommand(input: Input) : Command(input, false) {
 
-    var filename: String = ""
+    private var filename: String = ""
 
     init {
         require(1, "invalid command, please try: O picasso.txt")

@@ -3,7 +3,6 @@ package commands
 import core.Canvas
 import core.Input
 import core.Pixel
-import kotlin.math.abs
 
 class LineCommand(input: Input) : Command(input) {
 

@@ -2,7 +2,6 @@ package commands
 
 import core.Canvas
 import core.Input
-import core.Pixel
 
 class DotCommand(input: Input) : Command(input) {
 
