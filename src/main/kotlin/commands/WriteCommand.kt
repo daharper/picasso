@@ -9,7 +9,6 @@ class WriteCommand(input: Input) : Command(input) {
     private var y1 = 0
     private var text = ""
 
-
     init {
         requireMin(3, "Invalid command, try: W 1 1 Hello World!")
 
