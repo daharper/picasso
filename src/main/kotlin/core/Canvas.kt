@@ -82,10 +82,9 @@ object Canvas {
         if (yPixelCount >= xPixelCount) {
 
             val step = yPixelCount / xPixelCount
-            println(step)
 
             for (i in 1..yPixelCount) {
-                Canvas.setPen(x, y++, pen)
+                setPen(x, y++, pen)
 
                 if (i % step == 0) {
                     if ((xOffset == -1 && x > x2) || (xOffset == 1 && x < x2)) {
@@ -101,7 +100,7 @@ object Canvas {
         val step = xPixelCount / yPixelCount
 
         for (i in 1..xPixelCount) {
-            Canvas.setPen(x, y, pen)
+            setPen(x, y, pen)
 
             x += xOffset
 
