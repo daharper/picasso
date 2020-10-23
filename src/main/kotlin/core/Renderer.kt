@@ -19,6 +19,7 @@ object Renderer {
 
         drawHorizontalBorder(Canvas)
         println()
+        println()
     }
 
     private fun drawHorizontalBorder(canvas: Canvas) {
