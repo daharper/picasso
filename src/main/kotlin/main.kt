@@ -17,6 +17,7 @@ fun main() {
                 "L" -> LineCommand(input)
                 "Q" -> QuitCommand(input)
                 "R" -> RectangleCommand(input)
+                "T" -> TriangleCommand(input)
                 else -> InvalidCommand(input)
             }
 

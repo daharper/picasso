@@ -2,6 +2,7 @@ package commands
 
 import core.Canvas
 import core.Input
+import core.Pixel
 
 class RectangleCommand(input: Input) : Command(input) {
 
@@ -30,9 +31,9 @@ class RectangleCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        Canvas.drawHorizontalLine(x1, x2, y1, pen)
-        Canvas.drawHorizontalLine(x1, x2, y2, pen)
-        Canvas.drawVerticalLine(y1, y2, x1, pen)
-        Canvas.drawVerticalLine(y1, y2, x2, pen)
+        Canvas.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
+        Canvas.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
+        Canvas.drawVerticalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
+        Canvas.drawVerticalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
     }
 }
