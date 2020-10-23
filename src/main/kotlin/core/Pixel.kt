@@ -8,19 +8,19 @@ data class Pixel(val x: Int, val y:Int) {
 
     fun setPen(pen: Char) = Canvas.setPen(x, y, pen)
 
-    fun isLeft(pen: Char): Boolean {
+    infix fun leftIs(pen: Char): Boolean {
         return x != 1 && left().isSame(pen)
     }
 
-    fun isRight(pen: Char): Boolean {
+    infix fun rightIs(pen: Char): Boolean {
         return x != Canvas.getWidth() && right().isSame(pen)
     }
 
-    fun isUp(pen: Char): Boolean {
+    infix fun upIs(pen: Char): Boolean {
         return y != 1 && up().isSame(pen)
     }
 
-    fun isDown(pen: Char): Boolean {
+    infix fun downIs(pen: Char): Boolean {
         return y != Canvas.getHeight() && down().isSame(pen)
     }
 

@@ -19,29 +19,26 @@ class FillCommand(input: Input) : Command(input) {
         pen = getPen(2)
     }
 
-    override fun execute() {
-        val pixel = Canvas.getPixel(x, y)
-        visit(pixel)
-    }
+    override fun execute() = visit(Pixel(x, y))
 
     private fun visit(pixel: Pixel) {
         val target = pixel.getPen()
 
         pixel.setPen(pen)
 
-        if (pixel.isUp(target)) {
+        if (pixel upIs target) {
             visit(pixel.up())
         }
 
-        if (pixel.isLeft(target)) {
+        if (pixel leftIs target) {
             visit(pixel.left())
         }
 
-        if (pixel.isRight(target)) {
+        if (pixel rightIs target) {
             visit(pixel.right())
         }
 
-        if (pixel.isDown(target)) {
+        if (pixel downIs target) {
             visit(pixel.down())
         }
     }

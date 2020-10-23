@@ -25,8 +25,6 @@ object Canvas {
 
     fun getHeight() = height
 
-    fun getPixel(x: Int, y: Int) = Pixel(x, y)
-
     fun getPen(x: Int, y: Int) = data[getIndex(x, y)]
 
     fun setPen(x: Int, y: Int, pen: Char) {
