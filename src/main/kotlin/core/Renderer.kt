@@ -3,6 +3,8 @@ package core
 object Renderer {
 
     fun execute() {
+        if (!Canvas.isInitialized()) return
+
         println()
         drawHorizontalBorder(Canvas)
         println()

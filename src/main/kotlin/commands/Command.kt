@@ -3,11 +3,13 @@ package commands
 import core.Canvas
 import core.Input
 
-abstract class Command(val input: Input) {
+abstract class Command(val input: Input, val isStorable: Boolean = true) {
 
     fun require(count: Int, error: String) = input.require(count, error)
 
     fun requireMin(count: Int, error: String) = input.requireMin(count, error)
+
+    fun argCount() = input.argCount()
 
     fun asInt(index: Int) = input.getInt(index)
 
@@ -35,7 +37,13 @@ abstract class Command(val input: Input) {
         return input.getChar(index)
     }
 
+    fun getString(index: Int): String {
+        return input.getString(index)
+    }
+
     fun getText(index: Int) = input.getText(index)
+
+    override fun toString(): String = input.toString()
 
     abstract fun execute()
 }

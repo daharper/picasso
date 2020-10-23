@@ -26,4 +26,8 @@ class CanvasCommand(input: Input) : Command(input) {
     override fun execute() {
         Canvas.initialize(width, height)
     }
+
+    companion object {
+        fun default() = CanvasCommand(Input("C", listOf("20", "4")))
+    }
 }

@@ -6,7 +6,7 @@ import core.Pixel
 
 class RectangleCommand(input: Input) : Command(input) {
 
-    private val pen = 'x'
+    private var pen = 'x'
 
     private var x1 = 0
     private var x2 = 0
@@ -14,12 +14,16 @@ class RectangleCommand(input: Input) : Command(input) {
     private var y2 = 0
 
     init {
-        require(4, "Invalid command, try: R 1 1 10 10")
+        requireMin(4, "Invalid command, try: R 1 1 10 10")
 
         x1 = getX(0)
         y1 = getY(1)
         x2 = getX(2)
         y2 = getY(3)
+
+        if (argCount() == 5) {
+            pen = getPen(4)
+        }
 
         if (y1 > y2) {
             y1 = y2.also {y2 = y1}
