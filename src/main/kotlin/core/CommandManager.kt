@@ -26,10 +26,7 @@ object CommandManager {
         while (history.size > 1) {
             history.removeLast()
         }
-
-        for (command in history) {
-            command.execute()
-        }
+        history.first().execute()
     }
 
     fun undo() {
@@ -44,14 +41,7 @@ object CommandManager {
 
     fun replay(commands: List<String>) {
         commands.forEach {
-            val tokens = it.trim().split(" ")
-            val command = tokens[0].toUpperCase()
-
-            val input = if (tokens.size == 1)
-                Input(command)
-            else
-                Input(command, tokens.slice(1 until tokens.size))
-
+            val input = Input.create(it)
             execute(input)
         }
     }

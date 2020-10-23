@@ -10,12 +10,6 @@ object InputProcessor {
             text = readLine() ?: continue
         }
 
-        val tokens = text.trim().split(" ")
-        val command = tokens[0].toUpperCase()
-
-        return if (tokens.size == 1)
-                    Input(command)
-               else
-                    Input(command, tokens.slice(1 until tokens.size))
+        return Input.create(text)
     }
 }

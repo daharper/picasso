@@ -2,6 +2,18 @@ package core
 
 data class Input(val command: String = "", val args: List<String> = listOf()) {
 
+    companion object {
+        fun create(text: String): Input {
+            val tokens = text.trim().split(" ")
+            val command = tokens[0].toUpperCase()
+
+            return if (tokens.size == 1)
+                Input(command)
+            else
+                Input(command, tokens.slice(1 until tokens.size))
+        }
+    }
+
     fun require(count: Int, error: String) {
         if (args.size != count) {
             throw Exception(error)
