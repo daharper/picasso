@@ -40,6 +40,8 @@ object CommandManager {
     }
 
     fun replay(commands: List<String>) {
+        clear()
+
         commands.forEach {
             val input = Input.create(it)
             execute(input)

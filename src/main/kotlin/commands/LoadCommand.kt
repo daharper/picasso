@@ -15,7 +15,6 @@ class LoadCommand(input: Input) : Command(input, false) {
     }
 
     override fun execute() {
-        CommandManager.clear()
         val commands = File(filename).readLines()
         CommandManager.replay(commands)
     }
