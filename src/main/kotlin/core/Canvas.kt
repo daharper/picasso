@@ -19,8 +19,6 @@ object Canvas {
         this.data = "".padEnd(height * width).toCharArray()
     }
 
-    fun isInitialized() = data.isNotEmpty()
-
     fun getWidth() = width
 
     fun getHeight() = height
