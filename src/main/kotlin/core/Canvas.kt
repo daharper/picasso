@@ -29,7 +29,7 @@ object Canvas {
 
     fun getPen(x: Int, y: Int) = data[getIndex(x, y)]
 
-    fun setPen(x: Int, y: Int, pen: Char) {
+    fun drawPixel(x: Int, y: Int, pen: Char) {
         data[getIndex(x, y)] = pen
     }
 
@@ -42,7 +42,7 @@ object Canvas {
         }
 
         for (x in x1..x2) {
-            setPen(x, start.y, pen)
+            drawPixel(x, start.y, pen)
         }
     }
 
@@ -55,7 +55,7 @@ object Canvas {
         }
 
         for (y in y1..y2) {
-            setPen(start.x, y, pen)
+            drawPixel(start.x, y, pen)
         }
     }
 
@@ -84,7 +84,7 @@ object Canvas {
             val step = yPixelCount / xPixelCount
 
             for (i in 1..yPixelCount) {
-                setPen(x, y++, pen)
+                drawPixel(x, y++, pen)
 
                 if (i % step == 0) {
                     if ((xOffset == -1 && x > x2) || (xOffset == 1 && x < x2)) {
@@ -100,7 +100,7 @@ object Canvas {
         val step = xPixelCount / yPixelCount
 
         for (i in 1..xPixelCount) {
-            setPen(x, y, pen)
+            drawPixel(x, y, pen)
 
             x += xOffset
 

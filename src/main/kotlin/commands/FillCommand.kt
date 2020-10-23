@@ -1,6 +1,5 @@
 package commands
 
-import core.Canvas
 import core.Input
 import core.Pixel
 
@@ -24,7 +23,7 @@ class FillCommand(input: Input) : Command(input) {
     private fun visit(pixel: Pixel) {
         val target = pixel.getPen()
 
-        pixel.setPen(pen)
+        pixel drawWith pen
 
         if (pixel upIs target) {
             visit(pixel.up())

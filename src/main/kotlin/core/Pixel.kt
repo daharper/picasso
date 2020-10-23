@@ -6,7 +6,7 @@ data class Pixel(val x: Int, val y:Int) {
 
     fun getPen() = Canvas.getPen(x, y)
 
-    fun setPen(pen: Char) = Canvas.setPen(x, y, pen)
+    infix fun drawWith(pen: Char) = Canvas.drawPixel(x, y, pen)
 
     infix fun leftIs(pen: Char): Boolean {
         return x != 1 && left().isSame(pen)
