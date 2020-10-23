@@ -11,8 +11,6 @@ object Canvas {
     private var height: Int = 0
     private var data: CharArray = CharArray(0)
 
-    private val index = { x: Int, y: Int -> (y - 1) * width + x - 1}
-
     init {
         initialize(10, 10)
     }
@@ -32,10 +30,10 @@ object Canvas {
 
     fun getPixel(x: Int, y: Int) = Pixel(x, y)
 
-    fun getPen(x: Int, y: Int) = data[index(x, y)]
+    fun getPen(x: Int, y: Int) = data[getIndex(x, y)]
 
     fun setPen(x: Int, y: Int, pen: Char) {
-        data[index(x, y)] = pen
+        data[getIndex(x, y)] = pen
     }
 
     fun drawHorizontalLine(x1: Int, x2: Int, y: Int, pen: Char) {
@@ -48,5 +46,9 @@ object Canvas {
         for (y in y1..y2) {
             setPen(x, y, pen)
         }
+    }
+
+    private fun getIndex(x: Int, y: Int): Int {
+        return (y - 1) * width + x - 1
     }
 }
