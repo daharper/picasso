@@ -5,11 +5,11 @@ fun main() {
     var cmd = CommandManager.execute(HelpCommand())
 
     while (cmd !is QuitCommand) {
-        Renderer.execute()
-
-        val input = InputProcessor.readInput()
-
         try {
+            Renderer.execute()
+
+            val input = InputProcessor.readInput()
+
             cmd = CommandManager.execute(input)
         }
         catch (e: Exception){
