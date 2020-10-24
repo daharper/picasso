@@ -3,7 +3,7 @@ package commands
 import core.Canvas
 import core.Input
 
-class DotCommand(input: Input) : Command(input) {
+class PlotCommand(input: Input) : Command(input) {
 
     private var x1 = 0
     private var y1 = 0

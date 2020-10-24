@@ -67,7 +67,7 @@ object CommandManager {
             "H" -> HistoryCommand(input)
             "L" -> LineCommand(input)
             "O" -> LoadCommand(input)
-            "P" -> DotCommand(input)
+            "P" -> PlotCommand(input)
             "Q" -> QuitCommand(input)
             "R" -> RectangleCommand(input)
             "S" -> SaveCommand(input)
