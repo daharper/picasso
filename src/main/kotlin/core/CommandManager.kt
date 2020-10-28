@@ -3,6 +3,7 @@ package core
 import commands.*
 
 object CommandManager {
+
     private val history: MutableList<Command> = mutableListOf()
 
     init {

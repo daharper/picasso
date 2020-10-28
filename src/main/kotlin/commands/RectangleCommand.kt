@@ -3,6 +3,7 @@ package commands
 import core.Input
 import graphics.Pixel
 import graphics.Line
+import graphics.Rectangle
 
 class RectangleCommand(input: Input) : Command(input) {
 
@@ -24,20 +25,9 @@ class RectangleCommand(input: Input) : Command(input) {
         if (argCount() == 5) {
             pen = getPen(4)
         }
-
-        if (y1 > y2) {
-            y1 = y2.also {y2 = y1}
-        }
-
-        if (x1 > x2) {
-            x1 = x2.also {x2 = x1}
-        }
     }
 
     override fun execute() {
-        Line.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y1), pen)
-        Line.drawHorizontalLine(Pixel(x1, y2), Pixel(x2, y2), pen)
-        Line.drawVerticalLine(Pixel(x1, y1), Pixel(x1, y2), pen)
-        Line.drawVerticalLine(Pixel(x2, y1), Pixel(x2, y2), pen)
+        Rectangle.draw(Pixel(x1, y1), Pixel(x2, y2), pen)
     }
 }

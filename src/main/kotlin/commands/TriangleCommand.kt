@@ -3,6 +3,7 @@ package commands
 import core.Input
 import graphics.Pixel
 import graphics.Line
+import graphics.Triangle
 
 class TriangleCommand(input: Input) : Command(input) {
 
@@ -31,8 +32,6 @@ class TriangleCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        Line.drawDiagonalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
-        Line.drawDiagonalLine(Pixel(x2, y2), Pixel(x3, y3), pen)
-        Line.drawDiagonalLine(Pixel(x3, y3), Pixel(x1, y1), pen)
+        Triangle.draw(x1, y1, x2, y2, x3, y3, pen)
     }
 }
