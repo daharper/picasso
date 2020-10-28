@@ -1,7 +1,9 @@
 package commands
 
-import core.Canvas
+import graphics.Canvas
 import core.Input
+import graphics.Pixel
+import graphics.Text
 
 class WriteCommand(input: Input) : Command(input) {
 
@@ -24,7 +26,7 @@ class WriteCommand(input: Input) : Command(input) {
 
     override fun execute() {
         if (text.isNotEmpty()) {
-            Canvas.drawText(x1, y1, text)
+            Text.draw(Pixel(x1, y1), text)
         }
     }
 }

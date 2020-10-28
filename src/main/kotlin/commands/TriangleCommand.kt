@@ -1,8 +1,8 @@
 package commands
 
-import core.Canvas
 import core.Input
-import core.Pixel
+import graphics.Pixel
+import graphics.Line
 
 class TriangleCommand(input: Input) : Command(input) {
 
@@ -31,8 +31,8 @@ class TriangleCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        Canvas.drawDiagonalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
-        Canvas.drawDiagonalLine(Pixel(x2, y2), Pixel(x3, y3), pen)
-        Canvas.drawDiagonalLine(Pixel(x3, y3), Pixel(x1, y1), pen)
+        Line.drawDiagonalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
+        Line.drawDiagonalLine(Pixel(x2, y2), Pixel(x3, y3), pen)
+        Line.drawDiagonalLine(Pixel(x3, y3), Pixel(x1, y1), pen)
     }
 }

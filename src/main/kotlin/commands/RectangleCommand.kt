@@ -1,8 +1,8 @@
 package commands
 
-import core.Canvas
 import core.Input
-import core.Pixel
+import graphics.Pixel
+import graphics.Line
 
 class RectangleCommand(input: Input) : Command(input) {
 
@@ -35,9 +35,9 @@ class RectangleCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        Canvas.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y1), pen)
-        Canvas.drawHorizontalLine(Pixel(x1, y2), Pixel(x2, y2), pen)
-        Canvas.drawVerticalLine(Pixel(x1, y1), Pixel(x1, y2), pen)
-        Canvas.drawVerticalLine(Pixel(x2, y1), Pixel(x2, y2), pen)
+        Line.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y1), pen)
+        Line.drawHorizontalLine(Pixel(x1, y2), Pixel(x2, y2), pen)
+        Line.drawVerticalLine(Pixel(x1, y1), Pixel(x1, y2), pen)
+        Line.drawVerticalLine(Pixel(x2, y1), Pixel(x2, y2), pen)
     }
 }

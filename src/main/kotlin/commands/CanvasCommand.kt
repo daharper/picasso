@@ -1,6 +1,6 @@
 package commands
 
-import core.Canvas
+import graphics.Canvas
 import core.Input
 
 class CanvasCommand(input: Input) : Command(input) {

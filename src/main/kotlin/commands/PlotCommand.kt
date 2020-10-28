@@ -1,7 +1,8 @@
 package commands
 
-import core.Canvas
+import graphics.Canvas
 import core.Input
+import graphics.Pixel
 
 class PlotCommand(input: Input) : Command(input) {
 
@@ -19,6 +20,6 @@ class PlotCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        Canvas.drawPixel(x1, y1, pen)
+        Pixel(x1, y1) drawWith pen
     }
 }

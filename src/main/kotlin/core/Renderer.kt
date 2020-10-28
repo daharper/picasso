@@ -1,5 +1,7 @@
 package core
 
+import graphics.Canvas
+
 object Renderer {
 
     fun execute() {

@@ -1,40 +1,14 @@
-package core
+package graphics
 
 import kotlin.math.abs
 
-object Canvas {
+object Line {
 
-    const val minWidth = 4
-    const val maxWidth = 40
-    const val minHeight = 4
-    const val maxHeight = 40
-
-    private var width: Int = 0
-    private var height: Int = 0
-    private var data: CharArray = CharArray(0)
-
-    fun initialize(width: Int, height: Int) {
-        this.height = height
-        this.width = width
-        this.data = "".padEnd(height * width).toCharArray()
-    }
-
-    fun getWidth() = width
-
-    fun getHeight() = height
-
-    fun getPen(x: Int, y: Int) = data[getIndex(x, y)]
-
-    fun drawPixel(x: Int, y: Int, pen: Char) {
-        data[getIndex(x, y)] = pen
-    }
-
-    fun drawText(x: Int, y: Int, text: String) {
-        var i = x
-
-        for (c in text) {
-            if (i > width) break
-            drawPixel(i++, y, c)
+    fun draw(start: Pixel, end: Pixel, pen: Char) {
+        when {
+            start.x == end.x -> drawVerticalLine(start, end, pen)
+            start.y == end.y -> drawHorizontalLine(start, end, pen)
+            else -> drawDiagonalLine(start, end, pen)
         }
     }
 
@@ -47,7 +21,7 @@ object Canvas {
         }
 
         for (x in x1..x2) {
-            drawPixel(x, start.y, pen)
+            Canvas.drawPixel(x, start.y, pen)
         }
     }
 
@@ -60,11 +34,11 @@ object Canvas {
         }
 
         for (y in y1..y2) {
-            drawPixel(start.x, y, pen)
+            Canvas.drawPixel(start.x, y, pen)
         }
     }
 
-    fun drawDiagonalLine(start: Pixel, end:Pixel, pen: Char) {
+    fun drawDiagonalLine(start: Pixel, end: Pixel, pen: Char) {
         var x1 = start.x
         var y1 = start.y
         var x2 = end.x
@@ -89,7 +63,7 @@ object Canvas {
             val step = yPixelCount / xPixelCount
 
             for (i in 1..yPixelCount) {
-                drawPixel(x, y++, pen)
+                Canvas.drawPixel(x, y++, pen)
 
                 if (i % step == 0) {
                     if ((xOffset == -1 && x > x2) || (xOffset == 1 && x < x2)) {
@@ -105,7 +79,7 @@ object Canvas {
         val step = xPixelCount / yPixelCount
 
         for (i in 1..xPixelCount) {
-            drawPixel(x, y, pen)
+            Canvas.drawPixel(x, y, pen)
 
             x += xOffset
 
@@ -113,9 +87,5 @@ object Canvas {
                 ++y
             }
         }
-    }
-
-    private fun getIndex(x: Int, y: Int): Int {
-        return (y - 1) * width + x - 1
     }
 }

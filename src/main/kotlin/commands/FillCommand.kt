@@ -1,7 +1,8 @@
 package commands
 
 import core.Input
-import core.Pixel
+import graphics.Fill
+import graphics.Pixel
 
 class FillCommand(input: Input) : Command(input) {
 
@@ -18,27 +19,5 @@ class FillCommand(input: Input) : Command(input) {
         pen = getPen(2)
     }
 
-    override fun execute() = visit(Pixel(x, y))
-
-    private fun visit(pixel: Pixel) {
-        val target = pixel.getPen()
-
-        pixel drawWith pen
-
-        if (pixel upIs target) {
-            visit(pixel.up())
-        }
-
-        if (pixel leftIs target) {
-            visit(pixel.left())
-        }
-
-        if (pixel rightIs target) {
-            visit(pixel.right())
-        }
-
-        if (pixel downIs target) {
-            visit(pixel.down())
-        }
-    }
+    override fun execute() = Fill.execute(Pixel(x, y), pen)
 }

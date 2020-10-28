@@ -1,8 +1,8 @@
 package commands
 
-import core.Canvas
 import core.Input
-import core.Pixel
+import graphics.Pixel
+import graphics.Line
 
 class LineCommand(input: Input) : Command(input) {
 
@@ -27,22 +27,6 @@ class LineCommand(input: Input) : Command(input) {
     }
 
     override fun execute() {
-        when {
-            x1 == x2 -> drawVerticalLine()
-            y1 == y2 -> drawHorizontalLine()
-            else -> drawDiagonalLine()
-        }
-    }
-
-    private fun drawHorizontalLine() {
-        Canvas.drawHorizontalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
-    }
-
-    private fun drawVerticalLine() {
-        Canvas.drawVerticalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
-    }
-
-    private fun drawDiagonalLine() {
-        Canvas.drawDiagonalLine(Pixel(x1, y1), Pixel(x2, y2), pen)
+        Line.draw(Pixel(x1, y1), Pixel(x2, y2), pen)
     }
 }
